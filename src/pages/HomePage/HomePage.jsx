@@ -61,7 +61,7 @@ const HomePage = () => {
           <img
             className={styles.heroImg}
             src={filteredData[0].images[0].url}
-            alt="viev from one of our hotels"
+            alt="view from one of our hotels"
           />
         )}
       </section>
