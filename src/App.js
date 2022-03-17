@@ -1,12 +1,25 @@
 import './App.css';
+import { BrowserRouter } from "react-router-dom";
+
+import { Route, Routes } from "react-router-dom";
+import HomePage from './pages/HomePage/HomePage';
+// import HomePage from './pages/HomePage/HomePage';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        hej
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/results" element={<ResultsPage />} /> */}
+        {/* <Route
+                path="/results/:imageId"
+                element={<ImageDetailsPage />}
+              ></Route> */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
