@@ -5,7 +5,7 @@ import fetchData from "../../utils/fetchData";
 // import SearchBar from "../../components/searchBar/SearchBar";
 import styles from "./HomePage.module.css";
 import { FaStar } from "react-icons/fa";
-import Cards from "../../components/cards/Cards";
+import Hotels from "../../components/hotels/Hotels";
 import Counter from "../../components/counter/Counter";
 
 const colors = {
@@ -94,7 +94,7 @@ const HomePage = () => {
           />
         </div>
         <div>
-          <Cards
+          <Hotels
             filteredData={filteredData}
             stars={stars}
             colors={colors}

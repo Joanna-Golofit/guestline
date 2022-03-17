@@ -1,0 +1,11 @@
+.card {
+  /* display: flex; */
+  border: 1px solid black;
+  margin: 15px 0;
+}
+
+
+
+/* .image:hover {
+ cursor: pointer;
+} */

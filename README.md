@@ -52,3 +52,5 @@ https://www.youtube.com/watch?v=l1Q7o8skKPM&ab_channel=AlbertDevshot
 not used: https://www.youtube.com/watch?v=eDw46GYAIDQ&ab_channel=EricMurphy
 seen: https://www.youtube.com/watch?v=nErdlbLWqtA&ab_channel=ProgrammingWithPrem
 
+slider:
+https://www.youtube.com/watch?v=l1MYfu5YWHc&ab_channel=BrianDesign

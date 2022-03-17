@@ -1,34 +1,24 @@
 import React from "react";
-import styles from "./Cards.module.css";
-// import { useState } from "react";
+import styles from "./Hotels.module.css";
 import { FaStar } from "react-icons/fa";
-// import { useEffect } from "react";
-// import { useState } from "react";
-// import fetchData from "../../utils/fetchData";
 import Rooms from "../rooms/Rooms";
+import Slider from "../slider/Slider";
 
-const Cards = ({
+const Hotels = ({
   filteredData,
   stars,
   colors,
   capacityChildren,
   capacityAdults,
 }) => {
-  // const handleClick = (e, id) => {
-  //   if (e.target.name === id) {
-  //     console.log("id", id);
-  //     console.log("e.target.name", e.target.name);
-  //   }
-  // };
-
   return (
     <div className={styles.card}>
       {filteredData.length !== 0 &&
         filteredData.map((d) => (
-          // <div className={styles.card}>
           <div key={d.id}>
-            {d.name} stars:
-            {stars.map((star, idx) => (
+            <Slider images={d.images} id={d.id} />
+            <h3>{d.name}</h3>
+            {stars.map((_, idx) => (
               <FaStar
                 key={idx}
                 color={d.starRating > idx ? colors.orange : colors.gray}
@@ -41,10 +31,9 @@ const Cards = ({
               capacityChildren={capacityChildren}
             />
           </div>
-          // </div>
         ))}
     </div>
   );
 };
 
-export default Cards;
+export default Hotels;
