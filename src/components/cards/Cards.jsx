@@ -1,11 +1,28 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import styles from "./Cards.module.css";
 // import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useEffect } from "react";
+import { useState } from "react";
+import fetchData from "../../utils/fetchData";
 
+const Cards = ({ filteredData, stars, colors }) => {
+  const URL = `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${filteredData.id}`;
+  const [hotelData, setHotelData] = useState([]);
 
-const Cards = ({ data, stars, colors }) => {
+  // useEffect(() => {
+  //   {
+  //     filteredData.length !== 0 &&
+  //       fetchData(URL)
+  //         .then((fetchedData) => {
+  //           console.log("CARDS useEffect fetchData data:", fetchedData);
+  //           setHotelData(fetchedData);
+  //           // setFilteredData(fetchedData);
+  //         })
+  //         .catch((err) => console.log("err HomePage useEffect fetchData", err));
+  //   }
+  // }, [URL, filteredData.length]);
+
   // const handleClick = (e, id) => {
   //   if (e.target.name === id) {
   //     console.log("id", id);
@@ -15,8 +32,8 @@ const Cards = ({ data, stars, colors }) => {
 
   return (
     <>
-      {data.length !== 0 &&
-        data.map((d) => (
+      {filteredData.length !== 0 &&
+        filteredData.map((d) => (
           <p key={d.id}>
             {d.name} stars:{" "}
             {stars.map((star, idx) => (
