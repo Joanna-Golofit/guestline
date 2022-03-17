@@ -26,20 +26,19 @@ const HomePage = () => {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const URL = `https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG`;
-  const HotelURL = `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${filteredData.id}`;
 
   const handleClick = (value) => {
     setCurrentValue(value);
-    console.log(stars);
-    console.log("now clicked value: value", value);
-    console.log("currentValue - state before update", currentValue);
-    console.log("hoverValue - =value..", hoverValue);
-    console.log("capacityAdults", capacityAdults);
-    console.log("capacityChildren", capacityChildren);
-    console.log(data.map((d) => Number(d.starRating)));
-    console.log("value", value);
-    console.log(data.filter((d) => Number(d.starRating) >= value));
-    setFilteredData(data.filter((d) => Number(d.starRating) >= value));
+    // console.log(stars);
+    // console.log("now clicked value: value", value);
+    // console.log("currentValue - state before update", currentValue);
+    // console.log("hoverValue - =value..", hoverValue);
+    // console.log("capacityAdults", capacityAdults);
+    // console.log("capacityChildren", capacityChildren);
+    // console.log(data.map((d) => Number(d.starRating)));
+    // console.log("value", value);
+    // console.log(data.filter((d) => Number(d.starRating) = value));
+    setFilteredData(data.filter((d) => Number(d.starRating) === value));
   };
   const handleMouseOver = (value) => {
     setHoverValue(value);
@@ -55,6 +54,13 @@ const HomePage = () => {
         setData(fetchedData);
         setFilteredData(fetchedData);
       })
+      // .then(
+      //   fetchData(HotelURL).then((fetchedData) => {
+      //     console.log("useEffect 2fetchData data:", fetchedData);
+      //     setData(fetchedData);
+      //     setFilteredData(fetchedData);
+      //   })
+      // )
       .catch((err) => console.log("err HomePage useEffect fetchData", err));
   }, [URL]);
 

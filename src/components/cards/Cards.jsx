@@ -5,23 +5,10 @@ import { FaStar } from "react-icons/fa";
 import { useEffect } from "react";
 import { useState } from "react";
 import fetchData from "../../utils/fetchData";
+import Rooms from "../rooms/Rooms";
 
 const Cards = ({ filteredData, stars, colors }) => {
-  const URL = `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${filteredData.id}`;
-  const [hotelData, setHotelData] = useState([]);
-
-  // useEffect(() => {
-  //   {
-  //     filteredData.length !== 0 &&
-  //       fetchData(URL)
-  //         .then((fetchedData) => {
-  //           console.log("CARDS useEffect fetchData data:", fetchedData);
-  //           setHotelData(fetchedData);
-  //           // setFilteredData(fetchedData);
-  //         })
-  //         .catch((err) => console.log("err HomePage useEffect fetchData", err));
-  //   }
-  // }, [URL, filteredData.length]);
+  
 
   // const handleClick = (e, id) => {
   //   if (e.target.name === id) {
@@ -31,11 +18,12 @@ const Cards = ({ filteredData, stars, colors }) => {
   // };
 
   return (
-    <>
-      {filteredData.length !== 0 &&
-        filteredData.map((d) => (
+  <>
+    {filteredData.length !== 0 &&
+      filteredData.map((d) => (
+          <div className={styles.card}>
           <p key={d.id}>
-            {d.name} stars:{" "}
+            {d.name} stars:
             {stars.map((star, idx) => (
               <FaStar
                 key={idx}
@@ -43,9 +31,12 @@ const Cards = ({ filteredData, stars, colors }) => {
               />
             ))}
             {d.starRating}
+            <Rooms id={ d.id}/>
           </p>
-        ))}
-    </>
+    </div>
+      ))}
+      </>
+     
 
     // <div className={styles.results}>
     //   {images.map((image) => (
