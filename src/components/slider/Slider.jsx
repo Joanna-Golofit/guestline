@@ -1,9 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  IoIosArrowForward,
-  IoIosArrowDropright, IoIosArrowBack,
-} from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styles from "./Slider.module.css";
 
 const Slider = ({ images, id }) => {
@@ -12,19 +9,15 @@ const Slider = ({ images, id }) => {
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-    console.log("next");
   };
 
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
-    console.log("prev");
   };
 
   if (!Array.isArray(images) || images.length <= 0) {
     return null;
   }
-  console.log("length", length);
-  console.log("current", current);
 
   return (
     <section className={styles.slider}>
