@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import fetchData from "../../utils/fetchData";
-// import SearchBar from "../../components/searchBar/SearchBar";
 import styles from "./HomePage.module.css";
 import { FaStar } from "react-icons/fa";
 import Hotels from "../../components/hotels/Hotels";
@@ -14,7 +13,7 @@ const colors = {
 };
 
 const HomePage = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [capacityAdults, setCapacityAdults] = useState(2);
   const [capacityChildren, setCapacityChildren] = useState(0);
@@ -31,14 +30,12 @@ const HomePage = () => {
     setCurrentValue(value);
     // console.log(stars);
     // console.log("now clicked value: value", value);
-    // console.log("currentValue - state before update", currentValue);
-    // console.log("hoverValue - =value..", hoverValue);
     // console.log("capacityAdults", capacityAdults);
     // console.log("capacityChildren", capacityChildren);
     // console.log(data.map((d) => Number(d.starRating)));
     // console.log("value", value);
     // console.log(data.filter((d) => Number(d.starRating) = value));
-    setFilteredData(data.filter((d) => Number(d.starRating) >= value));
+    setFilteredData(filteredData.filter((d) => Number(d.starRating) >= value));
   };
   const handleMouseOver = (value) => {
     setHoverValue(value);
@@ -47,29 +44,34 @@ const HomePage = () => {
     setHoverValue(undefined);
   };
 
-  // const handleChildrenCounterClick = (value) => {
-  //   setCapacityChildren(value);
-  //   setFilteredData(data.filter((d) => Number(d.starRating) >= value));
-  // };
-
   useEffect(() => {
     fetchData(URL)
       .then((fetchedData) => {
         console.log("useEffect fetchData data:", fetchedData);
-        setData(fetchedData);
+        // setData(fetchedData);
         setFilteredData(fetchedData);
       })
-      .catch((err) => console.log("err HomePage useEffect fetchData", err));
+      .catch((err) => console.log("err ", err));
   }, [URL]);
 
   return (
     <div className={styles.container}>
+      <section>
+        {filteredData.length !== 0 && (
+          <img
+            className={styles.heroImg}
+            src={filteredData[0].images[0].url}
+            alt="viev from one of our hotels"
+          />
+        )}
+      </section>
       <div className={styles.wrapper}>
         <div className={styles.filters}>
           <div className={styles.starRating}>
             {stars.map((_, idx) => (
               <FaStar
                 key={idx}
+                size={24}
                 color={
                   (hoverValue || currentValue) > idx
                     ? colors.orange

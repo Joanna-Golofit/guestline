@@ -3,7 +3,7 @@ const fetchData = (url) => {
     if (!dataJson.ok) {
       throw new Error("Error, !dataJson.ok", dataJson.status);
     }
-    console.log("dataJson from fetchData", dataJson);
+    // console.log("dataJson from fetchData", dataJson);
     return dataJson.json();
   });
 };
