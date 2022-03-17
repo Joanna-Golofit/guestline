@@ -29,9 +29,13 @@ const Rooms = ({ id, capacityChildren, capacityAdults }) => {
     <>
       {filteredRooms.map((room) => (
         <div key={room.id} className={styles.card}>
-          <p>{room.name}</p>
-          <p>Adults: {room.occupancy.maxAdults}</p>
-          <p>Children: {room.occupancy.maxChildren}</p>
+          <div className={styles.left}>
+            <h4>{room.name}</h4>
+            <p>Adults: {room.occupancy.maxAdults}</p>
+            <p>Children: {room.occupancy.maxChildren}</p>
+          </div>
+          {/* <div></div> */}
+          <p className={styles.right}>{room.longDescription}</p>
         </div>
       ))}
     </>
