@@ -5,23 +5,27 @@ import fetchData from "../../utils/fetchData";
 import styles from "./Rooms.module.css";
 
 
-const Rooms = ({ id }) => {
+const Rooms = ({ id, capacityChildren }) => {
   const [rooms, setRooms] = useState([]);
+  const [filteredRooms, setFilteredRooms] = useState([]);
 
   useEffect(() => {
     fetchData(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${id}`)
       .then((fetchedData) => {
         console.log("Rooms data:", fetchedData.rooms);
         setRooms(fetchedData.rooms);
-        // setFilteredData(fetchedData);
+        setFilteredRooms(
+          fetchedData.rooms.filter(
+            (room) => Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+          )
+        );
       })
       .catch((err) => console.log("err CARDS useEffect fetchData", err));
-  }, [id]);
+  }, [id, capacityChildren]);
 
   return (
     <>
-      Rooms
-      {rooms.map((room) => (
+      {filteredRooms.map((room) => (
         <div key={room.id} className={styles.card}>
           <p>{room.name}</p>
           <p>Adults: {room.occupancy.maxAdults}</p>

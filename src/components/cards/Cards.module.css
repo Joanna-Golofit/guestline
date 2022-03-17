@@ -1,9 +1,9 @@
 .card {
   /* display: flex; */
   border: 1px solid black;
-  /* padding: 10px; */
+  margin: 15px 0;
 }
-.cardContainer {
+/* .cardContainer {
   width: 300px;
 }
 .img {
@@ -12,7 +12,6 @@
   background-color: gray;
   object-fit: cover;
   object-position: 30% 30%;
-  /* object-position: left top; */
 }
 .tags {
   display: flex;
@@ -22,10 +21,9 @@
 a {
   text-decoration: none;
   color: black;
-}
-
+} */
+/* 
 .tag {
-  /* text-align: justify; */
   background-color: rgba(211, 211, 211, 0.694);
   padding: 2px 9px 5px;
   border-radius: 5px;
@@ -35,5 +33,5 @@ a {
   color: red;
   rotate: 90deg;
 }
-
+ */
 

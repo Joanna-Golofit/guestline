@@ -38,7 +38,7 @@ const HomePage = () => {
     // console.log(data.map((d) => Number(d.starRating)));
     // console.log("value", value);
     // console.log(data.filter((d) => Number(d.starRating) = value));
-    setFilteredData(data.filter((d) => Number(d.starRating) === value));
+    setFilteredData(data.filter((d) => Number(d.starRating) >= value));
   };
   const handleMouseOver = (value) => {
     setHoverValue(value);
@@ -47,6 +47,11 @@ const HomePage = () => {
     setHoverValue(undefined);
   };
 
+  // const handleChildrenCounterClick = (value) => {
+  //   setCapacityChildren(value);
+  //   setFilteredData(data.filter((d) => Number(d.starRating) >= value));
+  // };
+
   useEffect(() => {
     fetchData(URL)
       .then((fetchedData) => {
@@ -54,34 +59,30 @@ const HomePage = () => {
         setData(fetchedData);
         setFilteredData(fetchedData);
       })
-      // .then(
-      //   fetchData(HotelURL).then((fetchedData) => {
-      //     console.log("useEffect 2fetchData data:", fetchedData);
-      //     setData(fetchedData);
-      //     setFilteredData(fetchedData);
-      //   })
-      // )
       .catch((err) => console.log("err HomePage useEffect fetchData", err));
   }, [URL]);
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className="starRating">
-          {stars.map((_, idx) => (
-            <FaStar
-              key={idx}
-              color={
-                (hoverValue || currentValue) > idx ? colors.orange : colors.gray
-              }
-              onClick={() => handleClick(idx + 1)}
-              onMouseOver={() => handleMouseOver(idx + 1)}
-              onMouseLeave={() => handleMouseLeave(idx + 1)}
-            />
-          ))}
-        </div>
-        <div className="capacity">
+        <div className={styles.filters}>
+          <div className={styles.starRating}>
+            {stars.map((_, idx) => (
+              <FaStar
+                key={idx}
+                color={
+                  (hoverValue || currentValue) > idx
+                    ? colors.orange
+                    : colors.gray
+                }
+                onClick={() => handleClick(idx + 1)}
+                onMouseOver={() => handleMouseOver(idx + 1)}
+                onMouseLeave={() => handleMouseLeave(idx + 1)}
+              />
+            ))}
+          </div>
           <Counter
+            className={styles.adults}
             title="Adults"
             value={capacityAdults}
             onClick={setCapacityAdults}
@@ -91,13 +92,14 @@ const HomePage = () => {
             value={capacityChildren}
             onClick={setCapacityChildren}
           />
-          {/* Children:
-          <button>-</button>
-          {childrenValue}
-          <button>+</button> */}
         </div>
         <div>
-          <Cards filteredData={filteredData} stars={stars} colors={colors} />
+          <Cards
+            filteredData={filteredData}
+            stars={stars}
+            colors={colors}
+            capacityChildren={capacityChildren}
+          />
         </div>
       </div>
     </div>
