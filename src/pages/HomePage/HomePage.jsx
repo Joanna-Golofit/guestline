@@ -98,6 +98,7 @@ const HomePage = () => {
             filteredData={filteredData}
             stars={stars}
             colors={colors}
+            capacityAdults={capacityAdults}
             capacityChildren={capacityChildren}
           />
         </div>

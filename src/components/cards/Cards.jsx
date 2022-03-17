@@ -7,7 +7,13 @@ import { FaStar } from "react-icons/fa";
 // import fetchData from "../../utils/fetchData";
 import Rooms from "../rooms/Rooms";
 
-const Cards = ({ filteredData, stars, colors, capacityChildren }) => {
+const Cards = ({
+  filteredData,
+  stars,
+  colors,
+  capacityChildren,
+  capacityAdults,
+}) => {
   // const handleClick = (e, id) => {
   //   if (e.target.name === id) {
   //     console.log("id", id);
@@ -29,7 +35,11 @@ const Cards = ({ filteredData, stars, colors, capacityChildren }) => {
               />
             ))}
             {d.starRating}
-            <Rooms id={d.id} capacityChildren={capacityChildren} />
+            <Rooms
+              id={d.id}
+              capacityAdults={capacityAdults}
+              capacityChildren={capacityChildren}
+            />
           </div>
           // </div>
         ))}
