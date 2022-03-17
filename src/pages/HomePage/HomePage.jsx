@@ -13,7 +13,7 @@ const colors = {
 };
 
 const HomePage = () => {
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [capacityAdults, setCapacityAdults] = useState(2);
   const [capacityChildren, setCapacityChildren] = useState(0);
@@ -35,7 +35,7 @@ const HomePage = () => {
     // console.log(data.map((d) => Number(d.starRating)));
     // console.log("value", value);
     // console.log(data.filter((d) => Number(d.starRating) = value));
-    setFilteredData(filteredData.filter((d) => Number(d.starRating) >= value));
+    setFilteredData(data.filter((d) => Number(d.starRating) >= value));
   };
   const handleMouseOver = (value) => {
     setHoverValue(value);
@@ -48,7 +48,7 @@ const HomePage = () => {
     fetchData(URL)
       .then((fetchedData) => {
         console.log("useEffect fetchData data:", fetchedData);
-        // setData(fetchedData);
+        setData(fetchedData);
         setFilteredData(fetchedData);
       })
       .catch((err) => console.log("err ", err));
