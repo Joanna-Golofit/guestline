@@ -5,7 +5,13 @@ import fetchData from "../../utils/fetchData";
 import styles from "./Rooms.module.css";
 
 
-const Rooms = ({ id, capacityChildren, capacityAdults }) => {
+const Rooms = ({
+  id,
+  capacityChildren,
+  capacityAdults,
+  // setRoomsLeft,
+  // filteredRooms,
+}) => {
   // const [rooms, setRooms] = useState([]);
   const [filteredRooms, setFilteredRooms] = useState([]);
 
@@ -21,19 +27,26 @@ const Rooms = ({ id, capacityChildren, capacityAdults }) => {
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
         );
-        console.log("yyy", 
-          fetchedData.rooms.filter(
-            (room) =>
-              Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
-              Number(room.occupancy.maxChildren) >= Number(capacityChildren)
-          ).length
-        );
+        // console.log(
+        //   "yyy",
+        //   fetchedData.rooms.filter(
+        //     (room) =>
+        //       Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
+        //       Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+        //   ).length
+        // );
+        // setRoomsLeft(
+        //   fetchedData.rooms.filter(
+        //     (room) =>
+        //       Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
+        //       Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+        //   ).length
+        // );
       })
-      .catch((err) => console.log("err CARDS useEffect fetchData", err))
-      // .finally((filteredRooms) =>
-      //   console.log("filteredRooms.length", filteredRooms)
-      // );
-  }, [id, capacityChildren, capacityAdults]);
+      .catch((err) => console.log("err CARDS useEffect fetchData", err));   
+  }, [id, capacityChildren, capacityAdults
+    // , setRoomsLeft
+  ]);
 
   return (
     <>

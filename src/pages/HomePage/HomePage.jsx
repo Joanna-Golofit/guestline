@@ -15,7 +15,7 @@ const colors = {
 const HomePage = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [capacityAdults, setCapacityAdults] = useState(2);
+  const [capacityAdults, setCapacityAdults] = useState(1);
   const [capacityChildren, setCapacityChildren] = useState(0);
   // const [capacity, setCapacity] = useState({
   //   adults: 1,
