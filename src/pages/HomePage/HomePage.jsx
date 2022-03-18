@@ -28,13 +28,6 @@ const HomePage = () => {
 
   const handleClick = (value) => {
     setCurrentValue(value);
-    // console.log(stars);
-    // console.log("now clicked value: value", value);
-    // console.log("capacityAdults", capacityAdults);
-    // console.log("capacityChildren", capacityChildren);
-    // console.log(data.map((d) => Number(d.starRating)));
-    // console.log("value", value);
-    // console.log(data.filter((d) => Number(d.starRating) = value));
     setFilteredData(data.filter((d) => Number(d.starRating) >= value));
   };
   const handleMouseOver = (value) => {
@@ -47,7 +40,7 @@ const HomePage = () => {
   useEffect(() => {
     fetchData(URL)
       .then((fetchedData) => {
-        console.log("useEffect fetchData data:", fetchedData);
+        // console.log("useEffect fetchData data:", fetchedData);
         setData(fetchedData);
         setFilteredData(fetchedData);
       })

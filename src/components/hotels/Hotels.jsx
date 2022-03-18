@@ -3,7 +3,6 @@ import styles from "./Hotels.module.css";
 import { FaStar } from "react-icons/fa";
 import Rooms from "../rooms/Rooms";
 import Slider from "../slider/Slider";
-// import { useState } from "react";
 
 const Hotels = ({
   filteredData,
@@ -13,13 +12,9 @@ const Hotels = ({
   capacityAdults,
 }) => {
   
-  // const [roomsLeft, setRoomsLeft] = useState(1);
-  // console.log("roomsLeft", roomsLeft);
-  
   return (
     <>
       {
-        // roomsLeft >= 1 && 
       filteredData.length !== 0 &&
         filteredData.map((d) => (
           <section className={styles.card} key={d.id}>
@@ -47,7 +42,6 @@ const Hotels = ({
               id={d.id}
               capacityAdults={capacityAdults}
               capacityChildren={capacityChildren}
-              // setRoomsLeft={setRoomsLeft}
             />
           </section>
         ))}

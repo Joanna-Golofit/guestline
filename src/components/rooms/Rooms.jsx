@@ -8,44 +8,24 @@ import styles from "./Rooms.module.css";
 const Rooms = ({
   id,
   capacityChildren,
-  capacityAdults,
-  // setRoomsLeft,
-  // filteredRooms,
+  capacityAdults
 }) => {
-  // const [rooms, setRooms] = useState([]);
   const [filteredRooms, setFilteredRooms] = useState([]);
 
   useEffect(() => {
     fetchData(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${id}`)
       .then((fetchedData) => {
-        console.log("Rooms data:", fetchedData.rooms);
-        // setRooms(fetchedData.rooms);
+        // console.log("Rooms data:", fetchedData.rooms);
         setFilteredRooms(
           fetchedData.rooms.filter(
             (room) =>
               Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
-        );
-        // console.log(
-        //   "yyy",
-        //   fetchedData.rooms.filter(
-        //     (room) =>
-        //       Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
-        //       Number(room.occupancy.maxChildren) >= Number(capacityChildren)
-        //   ).length
-        // );
-        // setRoomsLeft(
-        //   fetchedData.rooms.filter(
-        //     (room) =>
-        //       Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
-        //       Number(room.occupancy.maxChildren) >= Number(capacityChildren)
-        //   ).length
-        // );
+        );      
       })
-      .catch((err) => console.log("err CARDS useEffect fetchData", err));   
+      .catch((err) => console.log("err", err));   
   }, [id, capacityChildren, capacityAdults
-    // , setRoomsLeft
   ]);
 
   return (
@@ -57,7 +37,6 @@ const Rooms = ({
             <p>Adults: {room.occupancy.maxAdults}</p>
             <p>Children: {room.occupancy.maxChildren}</p>
           </div>
-          {/* <div></div> */}
           <p className={styles.right}>{room.longDescription}</p>
         </div>
       ))}

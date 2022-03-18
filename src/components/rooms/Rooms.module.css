@@ -2,13 +2,11 @@
   border-top: 1px solid black;
   padding: 10px;
   width: 100%;
-  /* margin: 10px; */
   display: flex;
 }
 
 .left {
   width: 28%;
-  /* max-width: 200px; */
   margin-right: 10px;
 
 }
