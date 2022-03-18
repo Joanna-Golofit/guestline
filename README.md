@@ -1,3 +1,14 @@
+## General info
+
+:star: 
+`npm i` 
+shall be enough to build the project,
+:orange_circle: you can see it [here](jg-guestline.netlify.app/)
+
+<a align="center" href="https://github.com/Joanna-Golofit">![GitHub](https://img.shields.io/badge/-Joanna--Golofit-05122A?style=flat&logo=github)</a> 
+
+===========================================
+
 Your goal is to create a page showing a list of hotels and their rooms.
 
 
@@ -14,7 +25,7 @@ https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG
 
 This returns a list of hotels, with an Id. The Id can be used to query this query for the room types:
 
-
+===========================================
 
 https://obmng.dbm.guestline.net/api/roomRates/OBMNG/[hotelId] for example, https://obmng.dbm.guestline.net/api/roomRates/OBMNG/OBMNG1
 
