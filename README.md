@@ -3,9 +3,11 @@
 :star: 
 `npm i` 
 shall be enough to build the project,
+
 :orange_circle: you can see it [here](jg-guestline.netlify.app/)
 
-<a align="center" href="https://github.com/Joanna-Golofit">![GitHub](https://img.shields.io/badge/-Joanna--Golofit-05122A?style=flat&logo=github)</a> 
+
+by <a href="https://github.com/Joanna-Golofit">![GitHub](https://img.shields.io/badge/-Joanna--Golofit-05122A?style=flat&logo=github)</a> 
 
 ===========================================
 
@@ -25,7 +27,6 @@ https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG
 
 This returns a list of hotels, with an Id. The Id can be used to query this query for the room types:
 
-===========================================
 
 https://obmng.dbm.guestline.net/api/roomRates/OBMNG/[hotelId] for example, https://obmng.dbm.guestline.net/api/roomRates/OBMNG/OBMNG1
 
@@ -56,11 +57,14 @@ Submitting your solution
 We expect to build your submission locally and review it's code. If you host it publicly let us know, but that's not necessary. Please send us source code (preferably a link to a public repository) with instructions on how to build it in a readme file Readme.md. We will always provide feedback about your work.
 
 
+===========================================
 
 
 stars: 
 https://www.youtube.com/watch?v=l1Q7o8skKPM&ab_channel=AlbertDevshot
+
 not used: https://www.youtube.com/watch?v=eDw46GYAIDQ&ab_channel=EricMurphy
+
 seen: https://www.youtube.com/watch?v=nErdlbLWqtA&ab_channel=ProgrammingWithPrem
 
 slider:
