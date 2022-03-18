@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styles from "./Slider.module.css";
+import PropTypes from "prop-types";
 
 const Slider = ({ images, id }) => {
   const [current, setCurrent] = useState(0);
@@ -38,6 +39,11 @@ const Slider = ({ images, id }) => {
       ))}
     </section>
   );
+};
+
+Slider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Slider;

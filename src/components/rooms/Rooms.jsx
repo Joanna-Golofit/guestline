@@ -3,13 +3,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import fetchData from "../../utils/fetchData";
 import styles from "./Rooms.module.css";
+import PropTypes from "prop-types";
 
-
-const Rooms = ({
-  id,
-  capacityChildren,
-  capacityAdults
-}) => {
+const Rooms = ({ id, capacityChildren, capacityAdults }) => {
   const [filteredRooms, setFilteredRooms] = useState([]);
 
   useEffect(() => {
@@ -22,11 +18,10 @@ const Rooms = ({
               Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
-        );      
+        );
       })
-      .catch((err) => console.log("err", err));   
-  }, [id, capacityChildren, capacityAdults
-  ]);
+      .catch((err) => console.log("err", err));
+  }, [id, capacityChildren, capacityAdults]);
 
   return (
     <>
@@ -42,6 +37,12 @@ const Rooms = ({
       ))}
     </>
   );
+};
+
+Rooms.propTypes = {
+  id: PropTypes.string.isRequired,
+  capacityChildren: PropTypes.number.isRequired,
+  capacityAdults: PropTypes.number.isRequired,
 };
 
 export default Rooms;

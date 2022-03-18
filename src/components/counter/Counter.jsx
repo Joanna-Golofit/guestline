@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Counter.module.css";
+import PropTypes from "prop-types";
 
 const Counter = ({ title, value, onClick }) => {
   return (
@@ -14,6 +15,12 @@ const Counter = ({ title, value, onClick }) => {
       </button>
     </div>
   );
+};
+
+Counter.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Counter;

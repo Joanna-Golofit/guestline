@@ -88,15 +88,13 @@ const HomePage = () => {
             onClick={setCapacityChildren}
           />
         </div>
-        <div>
-          <Hotels
-            filteredData={filteredData}
-            stars={stars}
-            colors={colors}
-            capacityAdults={capacityAdults}
-            capacityChildren={capacityChildren}
-          />
-        </div>
+        <Hotels
+          filteredData={filteredData}
+          stars={stars}
+          colors={colors}
+          capacityAdults={capacityAdults}
+          capacityChildren={capacityChildren}
+        />
       </div>
     </div>
   );

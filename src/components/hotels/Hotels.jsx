@@ -3,6 +3,7 @@ import styles from "./Hotels.module.css";
 import { FaStar } from "react-icons/fa";
 import Rooms from "../rooms/Rooms";
 import Slider from "../slider/Slider";
+import PropTypes from "prop-types";
 
 const Hotels = ({
   filteredData,
@@ -11,11 +12,9 @@ const Hotels = ({
   capacityChildren,
   capacityAdults,
 }) => {
-  
   return (
     <>
-      {
-      filteredData.length !== 0 &&
+      {filteredData.length !== 0 &&
         filteredData.map((d) => (
           <section className={styles.card} key={d.id}>
             <div className={styles.header}>
@@ -47,6 +46,14 @@ const Hotels = ({
         ))}
     </>
   );
+};
+
+Hotels.propTypes = {
+  filteredData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  stars: PropTypes.arrayOf(PropTypes.number).isRequired,
+  colors: PropTypes.objectOf(PropTypes.string).isRequired,
+  capacityChildren: PropTypes.number.isRequired,
+  capacityAdults: PropTypes.number.isRequired,
 };
 
 export default Hotels;
