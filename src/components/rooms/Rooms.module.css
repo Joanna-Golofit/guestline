@@ -8,9 +8,10 @@
 .left {
   width: 28%;
   margin-right: 10px;
-
 }
 .right {
   width: 72%;
-
+}
+h4 {
+  margin-bottom: 10px;
 }

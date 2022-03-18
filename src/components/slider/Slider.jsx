@@ -29,8 +29,8 @@ const Slider = ({ images, id }) => {
           {idx === current && (
             <img
               className={`img${idx}`}
-              width={150}
-              height={100}
+              width={225}
+              height={160}
               src={image.url}
               alt={`hotel ${id}`}
             ></img>

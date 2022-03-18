@@ -16,5 +16,8 @@
   display: flex;
 }
 .data {
-  padding: 0 10px;
+  padding: 0 15px;
+}
+.articleAddress {
+  margin: 10px 0;
 }

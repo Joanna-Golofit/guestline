@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
   width: fit-content;
+  /* width: 30%; */
+
 }
 .backArrow {
   position: absolute;

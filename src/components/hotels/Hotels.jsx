@@ -22,7 +22,7 @@ const Hotels = ({
                 <Slider images={d.images} id={d.id} />
                 <div className={styles.data}>
                   <h3>{d.name}</h3>
-                  <p>{d.address1}</p>
+                  <p className={styles.articleAddress}>{d.address1}</p>
                   <p>{`${d.address2}` || ``}</p>
                 </div>
               </div>
