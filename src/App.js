@@ -1,25 +1,25 @@
-import './App.css';
-import { BrowserRouter } from "react-router-dom";
-
-import { Route, Routes } from "react-router-dom";
-import HomePage from './pages/HomePage/HomePage';
-// import HomePage from './pages/HomePage/HomePage';
-
-
+import "./App.css";
+import HomePage from "./pages/HomePage/HomePage";
+// import {
+//   capacityAdultsContext,
+//   capacityChildrenContext
+// } from "./Helper/Context";
+// import { useState } from "react";
 
 function App() {
+  //  const [capacityAdults, setCapacityAdults] = useState(2);
+  //  const [capacityChildren, setCapacityChildren] = useState(0);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        {/* <Route path="/results" element={<ResultsPage />} /> */}
-        {/* <Route
-                path="/results/:imageId"
-                element={<ImageDetailsPage />}
-              ></Route> */}
-        <Route path="*" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter>
+    // <capacityAdultsContext.Provider
+    //   value={{ capacityAdults, setCapacityAdults }}
+    // >
+    //   <capacityChildrenContext.Provider
+    //     value={{ capacityChildren, setCapacityChildren }}
+    //   >
+        <HomePage />
+    //   </capacityChildrenContext.Provider>
+    // </capacityAdultsContext.Provider>
   );
 }
 

@@ -11,6 +11,10 @@ const Hotels = ({
   capacityChildren,
   capacityAdults,
 }) => {
+
+  const [filteredRooms, setFilteredRooms] = useState([]);
+
+
   return (
     <>
       {filteredData.length !== 0 &&

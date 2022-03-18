@@ -21,8 +21,18 @@ const Rooms = ({ id, capacityChildren, capacityAdults }) => {
               Number(room.occupancy.maxChildren) >= Number(capacityChildren)
           )
         );
+        console.log("yyy", 
+          fetchedData.rooms.filter(
+            (room) =>
+              Number(room.occupancy.maxAdults) >= Number(capacityAdults) &&
+              Number(room.occupancy.maxChildren) >= Number(capacityChildren)
+          ).length
+        );
       })
-      .catch((err) => console.log("err CARDS useEffect fetchData", err));
+      .catch((err) => console.log("err CARDS useEffect fetchData", err))
+      // .finally((filteredRooms) =>
+      //   console.log("filteredRooms.length", filteredRooms)
+      // );
   }, [id, capacityChildren, capacityAdults]);
 
   return (
