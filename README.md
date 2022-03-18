@@ -11,6 +11,8 @@ by <a href="https://github.com/Joanna-Golofit">![GitHub](https://img.shields.io/
 
 ===========================================
 
+## Description & requirements
+
 Your goal is to create a page showing a list of hotels and their rooms.
 
 
